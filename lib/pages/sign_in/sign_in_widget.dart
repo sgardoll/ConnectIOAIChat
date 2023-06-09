@@ -28,7 +28,6 @@ class _SignInWidgetState extends State<SignInWidget> {
     logFirebaseEvent('screen_view', parameters: {'screen_name': 'SignIn'});
     _model.emailTextController ??= TextEditingController();
     _model.passwordTextController ??= TextEditingController();
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

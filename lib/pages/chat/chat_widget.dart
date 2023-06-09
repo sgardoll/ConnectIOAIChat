@@ -83,8 +83,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
           !anim.applyInitialState),
       this,
     );
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
