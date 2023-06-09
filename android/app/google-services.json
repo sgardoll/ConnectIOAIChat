@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "100008295767",
+    "project_id": "connect-io-ai-chat",
+    "storage_bucket": "connect-io-ai-chat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:100008295767:android:02e2fb971f82ccb70f5212",
+        "android_client_info": {
+          "package_name": "com.connectio.aichat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "100008295767-noq0tdjrdmc3uj6c1eev3c7lfn98j2k6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.connectio.aichat",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "100008295767-1g9dfmdmtqbsm4eveqs6ugoc8f1pkoh4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJl42GrMtVKRfM4yzGap8P4tW_qCP8QbE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "100008295767-1g9dfmdmtqbsm4eveqs6ugoc8f1pkoh4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "100008295767-i52pla0940b3qd9e7v98n291dv8escjh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.connectio.aichat"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
