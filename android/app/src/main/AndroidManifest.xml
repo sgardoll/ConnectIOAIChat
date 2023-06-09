@@ -5,7 +5,7 @@
 
 
     <application
-        android:label="FlutterFlowAI"
+        android:label="ConnectIOAIChat"
         tools:replace="android:label"
         android:icon="@mipmap/ic_launcher"
         android:requestLegacyExternalStorage="true">
@@ -45,7 +45,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="connectioaichat" android:host="connectioaichat.com" />
+                <data android:scheme="connectio" android:host="aichat" />
             </intent-filter>
 
         </activity>

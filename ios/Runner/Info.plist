@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>FlutterFlowAI</string>
+	<string>ConnectIOAIChat</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -37,10 +37,10 @@
         <key>CFBundleTypeRole</key>
         <string>Editor</string>
         <key>CFBundleURLName</key>
-        <string>connectioaichat.com</string>
+        <string>aichat</string>
         <key>CFBundleURLSchemes</key>
         <array>
-        <string>connectioaichat</string>
+        <string>connectio</string>
         </array>
         </dict>
     </array>
