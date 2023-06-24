@@ -240,13 +240,13 @@ class _ChatBubblesWidgetState extends State<ChatBubblesWidget> {
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                         image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: Image.asset(
-                            'assets/images/1676852949201025.jpg',
+                          image: Image.network(
+                            'https://lh3.googleusercontent.com/a/ALm5wu1hcYswfiNecSBysflzbwat87jXRNcGUaSqqPTxZyY=s96-c',
                           ).image,
                         ),
                         shape: BoxShape.circle,
                         border: Border.all(
-                          color: FlutterFlowTheme.of(context).customColor1,
+                          color: FlutterFlowTheme.of(context).primaryText,
                           width: 1.5,
                         ),
                       ),

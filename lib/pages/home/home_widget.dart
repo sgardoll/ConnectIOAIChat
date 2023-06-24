@@ -258,8 +258,13 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                           logFirebaseEvent(
                                                               'TextField_backend_call');
 
-                                                          final chatsCreateData =
-                                                              createChatsRecordData(
+                                                          var chatsRecordReference =
+                                                              ChatsRecord
+                                                                  .collection
+                                                                  .doc();
+                                                          await chatsRecordReference
+                                                              .set(
+                                                                  createChatsRecordData(
                                                             uid:
                                                                 currentUserReference,
                                                             timestamp:
@@ -275,17 +280,25 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                               )})',
                                                               'Chat Title',
                                                             ),
-                                                          );
-                                                          var chatsRecordReference =
-                                                              ChatsRecord
-                                                                  .collection
-                                                                  .doc();
-                                                          await chatsRecordReference
-                                                              .set(
-                                                                  chatsCreateData);
+                                                          ));
                                                           _model.chatRef = ChatsRecord
                                                               .getDocumentFromData(
-                                                                  chatsCreateData,
+                                                                  createChatsRecordData(
+                                                                    uid:
+                                                                        currentUserReference,
+                                                                    timestamp:
+                                                                        getCurrentTimestamp,
+                                                                    title: valueOrDefault<
+                                                                        String>(
+                                                                      'Chat Title (${valueOrDefault<String>(
+                                                                        dateTimeFormat(
+                                                                            'M/d h:mm a',
+                                                                            getCurrentTimestamp),
+                                                                        'Chart Title',
+                                                                      )})',
+                                                                      'Chat Title',
+                                                                    ),
+                                                                  ),
                                                                   chatsRecordReference);
                                                           _shouldSetState =
                                                               true;
@@ -316,8 +329,14 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                           logFirebaseEvent(
                                                               'TextField_backend_call');
 
-                                                          final messagesCreateData1 =
-                                                              createMessagesRecordData(
+                                                          var messagesRecordReference1 =
+                                                              MessagesRecord
+                                                                  .createDoc(_model
+                                                                      .chatRef!
+                                                                      .reference);
+                                                          await messagesRecordReference1
+                                                              .set(
+                                                                  createMessagesRecordData(
                                                             timestamp:
                                                                 getCurrentTimestamp,
                                                             firstMessage: false,
@@ -326,18 +345,22 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                             user: 'system',
                                                             uid:
                                                                 currentUserReference,
-                                                          );
-                                                          var messagesRecordReference1 =
-                                                              MessagesRecord
-                                                                  .createDoc(_model
-                                                                      .chatRef!
-                                                                      .reference);
-                                                          await messagesRecordReference1
-                                                              .set(
-                                                                  messagesCreateData1);
+                                                          ));
                                                           _model.msg1 = MessagesRecord
                                                               .getDocumentFromData(
-                                                                  messagesCreateData1,
+                                                                  createMessagesRecordData(
+                                                                    timestamp:
+                                                                        getCurrentTimestamp,
+                                                                    firstMessage:
+                                                                        false,
+                                                                    message:
+                                                                        FFAppState()
+                                                                            .systemMessage,
+                                                                    user:
+                                                                        'system',
+                                                                    uid:
+                                                                        currentUserReference,
+                                                                  ),
                                                                   messagesRecordReference1);
                                                           _shouldSetState =
                                                               true;
@@ -352,8 +375,14 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                           logFirebaseEvent(
                                                               'TextField_backend_call');
 
-                                                          final messagesCreateData2 =
-                                                              createMessagesRecordData(
+                                                          var messagesRecordReference2 =
+                                                              MessagesRecord
+                                                                  .createDoc(_model
+                                                                      .chatRef!
+                                                                      .reference);
+                                                          await messagesRecordReference2
+                                                              .set(
+                                                                  createMessagesRecordData(
                                                             timestamp:
                                                                 getCurrentTimestamp,
                                                             firstMessage: true,
@@ -362,18 +391,22 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                             user: 'user',
                                                             uid:
                                                                 currentUserReference,
-                                                          );
-                                                          var messagesRecordReference2 =
-                                                              MessagesRecord
-                                                                  .createDoc(_model
-                                                                      .chatRef!
-                                                                      .reference);
-                                                          await messagesRecordReference2
-                                                              .set(
-                                                                  messagesCreateData2);
+                                                          ));
                                                           _model.msg2 = MessagesRecord
                                                               .getDocumentFromData(
-                                                                  messagesCreateData2,
+                                                                  createMessagesRecordData(
+                                                                    timestamp:
+                                                                        getCurrentTimestamp,
+                                                                    firstMessage:
+                                                                        true,
+                                                                    message:
+                                                                        FFAppState()
+                                                                            .userReinforcement,
+                                                                    user:
+                                                                        'user',
+                                                                    uid:
+                                                                        currentUserReference,
+                                                                  ),
                                                                   messagesRecordReference2);
                                                           _shouldSetState =
                                                               true;
@@ -388,8 +421,14 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                           logFirebaseEvent(
                                                               'TextField_backend_call');
 
-                                                          final messagesCreateData3 =
-                                                              createMessagesRecordData(
+                                                          var messagesRecordReference3 =
+                                                              MessagesRecord
+                                                                  .createDoc(_model
+                                                                      .chatRef!
+                                                                      .reference);
+                                                          await messagesRecordReference3
+                                                              .set(
+                                                                  createMessagesRecordData(
                                                             timestamp:
                                                                 getCurrentTimestamp,
                                                             firstMessage: false,
@@ -399,18 +438,21 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                             user: 'gpt',
                                                             uid:
                                                                 currentUserReference,
-                                                          );
-                                                          var messagesRecordReference3 =
-                                                              MessagesRecord
-                                                                  .createDoc(_model
-                                                                      .chatRef!
-                                                                      .reference);
-                                                          await messagesRecordReference3
-                                                              .set(
-                                                                  messagesCreateData3);
+                                                          ));
                                                           _model.msg3 = MessagesRecord
                                                               .getDocumentFromData(
-                                                                  messagesCreateData3,
+                                                                  createMessagesRecordData(
+                                                                    timestamp:
+                                                                        getCurrentTimestamp,
+                                                                    firstMessage:
+                                                                        false,
+                                                                    message:
+                                                                        FFAppState()
+                                                                            .gptOpener,
+                                                                    user: 'gpt',
+                                                                    uid:
+                                                                        currentUserReference,
+                                                                  ),
                                                                   messagesRecordReference3);
                                                           _shouldSetState =
                                                               true;
@@ -425,8 +467,14 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                           logFirebaseEvent(
                                                               'TextField_backend_call');
 
-                                                          final messagesCreateData4 =
-                                                              createMessagesRecordData(
+                                                          var messagesRecordReference4 =
+                                                              MessagesRecord
+                                                                  .createDoc(_model
+                                                                      .chatRef!
+                                                                      .reference);
+                                                          await messagesRecordReference4
+                                                              .set(
+                                                                  createMessagesRecordData(
                                                             timestamp:
                                                                 getCurrentTimestamp,
                                                             firstMessage: false,
@@ -436,18 +484,22 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                             user: 'user',
                                                             uid:
                                                                 currentUserReference,
-                                                          );
-                                                          var messagesRecordReference4 =
-                                                              MessagesRecord
-                                                                  .createDoc(_model
-                                                                      .chatRef!
-                                                                      .reference);
-                                                          await messagesRecordReference4
-                                                              .set(
-                                                                  messagesCreateData4);
+                                                          ));
                                                           _model.msg4 = MessagesRecord
                                                               .getDocumentFromData(
-                                                                  messagesCreateData4,
+                                                                  createMessagesRecordData(
+                                                                    timestamp:
+                                                                        getCurrentTimestamp,
+                                                                    firstMessage:
+                                                                        false,
+                                                                    message: _model
+                                                                        .textController
+                                                                        .text,
+                                                                    user:
+                                                                        'user',
+                                                                    uid:
+                                                                        currentUserReference,
+                                                                  ),
                                                                   messagesRecordReference4);
                                                           _shouldSetState =
                                                               true;
@@ -509,6 +561,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                     FFAppState()
                                                                         .prompt)
                                                                 .toString(),
+                                                            apiKey: FFAppState()
+                                                                .apiKey,
                                                           );
                                                           _shouldSetState =
                                                               true;
@@ -519,8 +573,12 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                             logFirebaseEvent(
                                                                 'TextField_backend_call');
 
-                                                            final messagesCreateData5 =
-                                                                createMessagesRecordData(
+                                                            await MessagesRecord
+                                                                    .createDoc(_model
+                                                                        .chatRef!
+                                                                        .reference)
+                                                                .set(
+                                                                    createMessagesRecordData(
                                                               timestamp:
                                                                   getCurrentTimestamp,
                                                               firstMessage:
@@ -534,13 +592,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                               user: 'gpt',
                                                               uid:
                                                                   currentUserReference,
-                                                            );
-                                                            await MessagesRecord
-                                                                    .createDoc(_model
-                                                                        .chatRef!
-                                                                        .reference)
-                                                                .set(
-                                                                    messagesCreateData5);
+                                                            ));
                                                             logFirebaseEvent(
                                                                 'TextField_update_app_state');
                                                             FFAppState()

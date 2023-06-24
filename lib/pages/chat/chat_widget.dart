@@ -625,16 +625,14 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                       logFirebaseEvent(
                                                                           'Title_backend_call');
 
-                                                                      final chatsUpdateData =
-                                                                          createChatsRecordData(
-                                                                        title: _model
-                                                                            .titleController
-                                                                            .text,
-                                                                      );
                                                                       await widget
                                                                           .chatRef!
                                                                           .update(
-                                                                              chatsUpdateData);
+                                                                              createChatsRecordData(
+                                                                        title: _model
+                                                                            .titleController
+                                                                            .text,
+                                                                      ));
                                                                     },
                                                                     textCapitalization:
                                                                         TextCapitalization
@@ -1026,8 +1024,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                         logFirebaseEvent(
                                                                             'Prompt_backend_call');
 
-                                                                        final messagesCreateData1 =
-                                                                            createMessagesRecordData(
+                                                                        await MessagesRecord.createDoc(widget.chatRef!)
+                                                                            .set(createMessagesRecordData(
                                                                           timestamp:
                                                                               getCurrentTimestamp,
                                                                           firstMessage:
@@ -1039,9 +1037,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                               'user',
                                                                           uid:
                                                                               currentUserReference,
-                                                                        );
-                                                                        await MessagesRecord.createDoc(widget.chatRef!)
-                                                                            .set(messagesCreateData1);
+                                                                        ));
                                                                         logFirebaseEvent(
                                                                             'Prompt_clear_text_fields');
                                                                         setState(
@@ -1069,6 +1065,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                                     'Hello!',
                                                                                   ))
                                                                               .toString(),
+                                                                          apiKey:
+                                                                              FFAppState().apiKey,
                                                                         );
                                                                         _shouldSetState =
                                                                             true;
@@ -1077,8 +1075,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                           logFirebaseEvent(
                                                                               'Prompt_backend_call');
 
-                                                                          final messagesCreateData2 =
-                                                                              createMessagesRecordData(
+                                                                          await MessagesRecord.createDoc(widget.chatRef!)
+                                                                              .set(createMessagesRecordData(
                                                                             timestamp:
                                                                                 getCurrentTimestamp,
                                                                             firstMessage:
@@ -1091,9 +1089,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                                 'gpt',
                                                                             uid:
                                                                                 currentUserReference,
-                                                                          );
-                                                                          await MessagesRecord.createDoc(widget.chatRef!)
-                                                                              .set(messagesCreateData2);
+                                                                          ));
                                                                           logFirebaseEvent(
                                                                               'Prompt_update_app_state');
                                                                           setState(

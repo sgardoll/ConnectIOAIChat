@@ -722,16 +722,14 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                                       return;
                                                     }
 
-                                                    final usersCreateData =
-                                                        createUsersRecordData(
-                                                      email: _model
-                                                          .emailTextController
-                                                          .text,
-                                                    );
                                                     await UsersRecord.collection
                                                         .doc(user.uid)
                                                         .update(
-                                                            usersCreateData);
+                                                            createUsersRecordData(
+                                                          email: _model
+                                                              .emailTextController
+                                                              .text,
+                                                        ));
 
                                                     logFirebaseEvent(
                                                         'Button_navigate_to');
